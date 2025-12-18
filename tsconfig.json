@@ -3,6 +3,7 @@
         "target": "ES6",
         "module": "ESNext",
         "jsx": "react-jsx",
+        "types": ["react","react-dom"],
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
@@ -10,5 +11,6 @@
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist"
     },
-    "include": ["src"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }

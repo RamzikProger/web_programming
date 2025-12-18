@@ -4,7 +4,7 @@ const webpack = require('webpack'); //to access built-in plugins
 
 module.exports = {
   mode: 'development',
-  entry:  './src/index.js',
+  entry:  './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'my-blog.bundle.js',
@@ -23,7 +23,9 @@ module.exports = {
     rules: [
       { 
         test: /\.css$/,
-        use: ['style-loader','css-loader'], 
+        use: ['style-loader',
+              'css-loader',
+              'postcss-loader'], 
       },
 
       {
