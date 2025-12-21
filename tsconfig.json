@@ -3,7 +3,7 @@
         "target": "ES6",
         "module": "ESNext",
         "jsx": "react-jsx",
-        "types": ["react","react-dom"],
+        "types": ["react","react-dom","jest"],
         "strict": true,
         "moduleResolution": "bundler",
         "esModuleInterop": true,
@@ -11,6 +11,7 @@
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist"
     },
-    "include": ["src/**/*", ".storybook/**/*"],
+    "include": ["src/**/*", ".storybook/**/*", "jest.setup.ts",
+  "global.d.ts"],
     "exclude": ["node_modules"]
 }
