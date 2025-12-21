@@ -5,12 +5,12 @@
         "jsx": "react-jsx",
         "types": ["react","react-dom"],
         "strict": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist"
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", ".storybook/**/*"],
     "exclude": ["node_modules"]
 }

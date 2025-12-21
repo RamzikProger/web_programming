@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../shared/ui/Button/Button';
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,34 +15,37 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md rounded-xl bg-white p-6 shadow-lg"
+        className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg dark:bg-gray-800"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* КНОПКА ЗАКРЫТИЯ */}
-        <button
-          onClick={onClose}
-          aria-label="Закрыть"
-          className="absolute right-3 top-3 text-gray-400 hover:text-gray-700 transition"
-        >
-          ✕
-        </button>
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+            Подписка
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+          >
+            ✕
+          </button>
+        </div>
 
-        <h2 className="mb-2 text-xl font-semibold">Подписаться</h2>
-        <p className="mb-4 text-gray-600">
-          Оставьте ваш e-mail для обновлений
+        <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          Оставь email, чтобы получать новые посты
         </p>
 
         <input
           type="email"
-          placeholder="Ваш email"
-          className="mb-4 w-full rounded border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="your@email.com"
+          className="mb-4 w-full rounded-md border border-gray-300 px-3 py-2 text-sm outline-none focus:border-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
         />
 
-        <button
-          className="w-full rounded bg-blue-600 py-2 text-white hover:bg-blue-700 transition"
-        >
-          Подписаться
-        </button>
+        <div className="flex justify-end gap-3">
+          <Button variant="secondary" onClick={onClose}>
+            Отмена
+          </Button>
+          <Button>Подписаться</Button>
+        </div>
       </div>
     </div>
   );

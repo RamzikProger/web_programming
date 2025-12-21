@@ -1,25 +1,26 @@
-import React from "react";
-import Post from "../../../entities/post/ui/Post";
+import React from 'react';
+import PostCard from '../../../entities/post/ui/PostCrad';
 
-interface PostType {
-    title: string;
-    text: string;
+interface Post {
+  title: string;
+  text: string;
+  image?: string;
 }
 
-interface PostsListProps{
-    posts: PostType[];
+interface PostsListProps {
+  posts: Post[];
 }
 
 const PostsList: React.FC<PostsListProps> = ({ posts }) => {
-    return (
-       <div className="container mx-auto grid gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 mb-12">
-
-            {posts.map((post, index) => (
-                <Post key={index} 
-                        title={post.title} 
-                        text={post.text}/>
-            ))}
-        </div>
-    );
+  return (
+    <div
+  id="posts"
+  className="container mt-24 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((p, i) => (
+        <PostCard key={i} {...p} />
+      ))}
+    </div>
+  );
 };
+
 export default PostsList;

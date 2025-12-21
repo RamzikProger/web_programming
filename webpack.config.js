@@ -9,9 +9,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'my-blog.bundle.js',
     clean: true,
+    publicPath: '/',
   },
   devServer:{
-    static: './dist',
+    static: './public',
     port: 3000,
     open: true,
     hot:true
