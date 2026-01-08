@@ -4,14 +4,15 @@ const webpack = require('webpack'); //to access built-in plugins
 
 module.exports = {
   mode: 'development',
-  entry:  './src/index.tsx',
+  entry:  './src/app/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'my-blog.bundle.js',
     clean: true,
+    publicPath: '/',
   },
   devServer:{
-    static: './dist',
+    static: './public',
     port: 3000,
     open: true,
     hot:true
